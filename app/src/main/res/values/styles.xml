@@ -18,11 +18,24 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/textColorGrey</item>
     </style>
-    <style name="MineCustomToolbar" parent="TextAppearance.Design.CollapsingToolbar.Expanded">
-        <item name="android:textSize">18sp</item>
-        <item name="android:textStyle">bold</item>
+    <style name="MineCustomToolbar" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">22sp</item>
         <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/colorTheme</item>
+    </style>
+
+
+
+    <style name="Theme.App.Base" parent="Widget.AppCompat.EditText">
+        <item name="android:colorControlNormal">@color/textColorBlack</item>
+        <item name="android:colorControlActivated">@color/textColorBlack</item>
+        <item name="android:colorControlHighlight">@color/textColorBlack</item>
+    </style>
+    <style name="Widget.App.EditText" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorControlNormal">@color/textColorBlack</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="colorControlHighlight">@color/white</item>
     </style>
 
 </resources>

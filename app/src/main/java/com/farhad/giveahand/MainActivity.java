@@ -13,6 +13,7 @@ import android.provider.MediaStore;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -36,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toolbar = findViewById(R.id.tool_bar);
-        setSupportActionBar(toolbar);
+        setupToolbar();
+
 
         viewPager =findViewById(R.id.view_pager);
         tabsAdapter = new TabsAdapter(getSupportFragmentManager());
@@ -45,5 +46,13 @@ public class MainActivity extends AppCompatActivity {
 
         tabLayout = findViewById(R.id.tab_layout);
         tabLayout.setupWithViewPager(viewPager, false);
+    }
+    private void setupToolbar() {
+        toolbar =findViewById(R.id.tool_bar);
+        TextView mTitle = toolbar.findViewById(R.id.toolbar_title);
+
+        setSupportActionBar(toolbar);
+        mTitle.setText(toolbar.getTitle());
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 }

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">প্রহরী</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="request_help_text">সাহায্য চাই</string>
+    <string name="do_help_text">সাহায্য করতে চাই</string>
+    <string name="search_location_hint">ঠিকানা অনুযায়ী সার্চ করুন</string>
+    <string name="details_text">বিস্তারিত</string>
+    <string name="contact_text">যোগাযোগ</string>
+    <string name="address_text">ঠিকানা</string>
+    <string name="address_hint">* এখানে আপনার ঠিকানা লিখুন</string>
+    <string name="message_text">মেসেজ</string>
+    <string name="message_hint">* এখানে সাহায্যের জন্য আপনার মেসেজটি লিখুন</string>
+    <string name="mobile_no_hint">* আপনার মোবাইল নম্বর</string>
+    <string name="another_no_hint">অন্য কোন যোগাযোগের মাধ্যম</string>
+    <string name="btn_post_text">পোস্ট করুন</string>
+</resources>

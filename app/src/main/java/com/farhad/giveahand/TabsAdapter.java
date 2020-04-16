@@ -34,11 +34,11 @@ public class TabsAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position){
         switch (position){
             case 0:
-                DoHelpFragment doHelpFragment = new DoHelpFragment();
-                return doHelpFragment;
-            case 1:
                 NeedHelpFragment needHelpFragment = new NeedHelpFragment();
                 return needHelpFragment;
+            case 1:
+                DoHelpFragment doHelpFragment = new DoHelpFragment();
+                return doHelpFragment;
             default:
                 return null;
         }

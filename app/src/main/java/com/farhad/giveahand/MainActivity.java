@@ -21,8 +21,11 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.viewpager.widget.ViewPager;
 
+import com.farhad.giveahand.api.ApiClient;
+import com.farhad.giveahand.api.ApiServices;
 import com.google.android.material.tabs.TabLayout;
 import android.os.Bundle;
 
@@ -32,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     private TabLayout tabLayout;
     private Toolbar toolbar;
 
+    public static ApiServices apiServices;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
         setupToolbar();
 
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET)!= PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.INTERNET},1);
+        }
+        apiServices= ApiClient.getApiClient().create(ApiServices.class);
 
         viewPager =findViewById(R.id.view_pager);
         tabsAdapter = new TabsAdapter(getSupportFragmentManager());

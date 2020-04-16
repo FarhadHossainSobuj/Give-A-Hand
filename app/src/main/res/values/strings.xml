@@ -7,11 +7,19 @@
     <string name="search_location_hint">ঠিকানা অনুযায়ী সার্চ করুন</string>
     <string name="details_text">বিস্তারিত</string>
     <string name="contact_text">যোগাযোগ</string>
+    <string name="contact_text2">যোগাযোগ করুন</string>
     <string name="address_text">ঠিকানা</string>
+    <string name="main_address">মুল ঠিকানা</string>
     <string name="address_hint">* এখানে আপনার ঠিকানা লিখুন</string>
     <string name="message_text">মেসেজ</string>
     <string name="message_hint">* এখানে সাহায্যের জন্য আপনার মেসেজটি লিখুন</string>
     <string name="mobile_no_hint">* আপনার মোবাইল নম্বর</string>
     <string name="another_no_hint">অন্য কোন যোগাযোগের মাধ্যম</string>
     <string name="btn_post_text">পোস্ট করুন</string>
+
+
+    <string name="address_error">আপনার ঠিকানা দিন</string>
+    <string name="message_error">আপনার মেসেজ দিন</string>
+    <string name="phone_error">আপনার মোবাইল নম্বর দিন</string>
+
 </resources>

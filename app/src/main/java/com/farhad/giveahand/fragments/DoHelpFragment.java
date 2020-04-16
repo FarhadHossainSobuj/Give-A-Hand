@@ -1,6 +1,7 @@
 package com.farhad.giveahand.fragments;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
@@ -19,6 +20,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.farhad.giveahand.DoHelpActivity;
 import com.farhad.giveahand.MainActivity;
 import com.farhad.giveahand.R;
 import com.farhad.giveahand.api.ApiClient;
@@ -65,7 +67,10 @@ public class DoHelpFragment extends Fragment {
         btn_contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(getContext(), DoHelpActivity.class);
+                intent.putExtra("location", edtPrimaryTask.getText().toString());
+                intent.putExtra("date", tv_date.getText().toString());
+                startActivity(intent);
             }
         });
 

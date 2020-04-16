@@ -25,7 +25,9 @@
         <item name="android:textColor">@color/colorTheme</item>
     </style>
 
-
+    <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textColor">@color/textColorBlack</item>
+    </style>
 
     <style name="Theme.App.Base" parent="Widget.AppCompat.EditText">
         <item name="android:colorControlNormal">@color/textColorBlack</item>

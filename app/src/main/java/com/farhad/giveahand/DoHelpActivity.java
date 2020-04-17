@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -23,13 +25,19 @@ public class DoHelpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_do_help);
         setTitle(R.string.do_help_text);
+
         location = getIntent().getStringExtra("location");
         tv_location = findViewById(R.id.location);
         tv_date = findViewById(R.id.date);
         tv_phone = findViewById(R.id.tv_phone_no);
         btn_contact = findViewById(R.id.btn_contact_to);
 
-        tv_location.setText("" + location);
+
+        if(location.equals("")){
+            tv_location.setText("Dhaka");
+        } else {
+            tv_location.setText("" + location);
+        }
         tv_date.setText("" + getIntent().getStringExtra("date"));
 
         btn_contact.setOnClickListener(new View.OnClickListener() {
@@ -40,4 +48,5 @@ public class DoHelpActivity extends AppCompatActivity {
             }
         });
     }
+
 }

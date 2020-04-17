@@ -39,6 +39,7 @@ public class NeedHelpFragment extends Fragment {
 
     private List<String> listAreas;
     private List<Integer> mListAreaCode;
+    ArrayAdapter arrayAdapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -55,9 +56,9 @@ public class NeedHelpFragment extends Fragment {
         listAreas = new ArrayList<>();
         getAreas();
 
-        ArrayAdapter area = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, listAreas);
-        area.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        sp_main_address.setAdapter(area);
+        arrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, listAreas);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        sp_main_address.setAdapter(arrayAdapter);
 
         btn_post = view.findViewById(R.id.btn_post);
         btn_post.setOnClickListener(new View.OnClickListener() {
@@ -92,6 +93,7 @@ public class NeedHelpFragment extends Fragment {
                     for(Area area: areas.getAreas()){
                         listAreas.add(area.getName());
                         mListAreaCode.add(area.getId());
+                        arrayAdapter.notifyDataSetChanged();
                     }
 
                 }

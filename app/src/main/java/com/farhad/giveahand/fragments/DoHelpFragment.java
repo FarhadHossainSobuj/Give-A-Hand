@@ -1,6 +1,8 @@
 package com.farhad.giveahand.fragments;
 
 import android.Manifest;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -51,7 +53,6 @@ public class DoHelpFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_do_help, container, false);
 
-
         edtPrimaryTask = view.findViewById(R.id.search_location);
         btn_details = view.findViewById(R.id.btn_details);
         btn_contact = view.findViewById(R.id.btn_contact);
@@ -71,6 +72,12 @@ public class DoHelpFragment extends Fragment {
                 intent.putExtra("location", edtPrimaryTask.getText().toString());
                 intent.putExtra("date", tv_date.getText().toString());
                 startActivity(intent);
+            }
+        });
+        btn_details.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDialog();
             }
         });
 
@@ -105,7 +112,6 @@ public class DoHelpFragment extends Fragment {
         }
     }
 
-
     private void getAreas() {
         Call<Areas> call = MainActivity.apiServices.getAreas();
         call.enqueue(new Callback<Areas>() {
@@ -130,5 +136,21 @@ public class DoHelpFragment extends Fragment {
 
             }
         });
+    }
+
+    private void showDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setTitle("No data found to show...");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // user clicked OK
+                // Toast.makeText(AssignTrainingActivity.this, "" + selectedAthletes.get(0), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+//        builder.setNegativeButton("Cancel", null);
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

@@ -26,7 +26,8 @@
     </style>
 
     <style name="mySpinnerItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
-        <item name="android:textColor">@color/textColorBlack</item>
+        <item name="android:textColor">@color/colorTheme</item>
+        <item name="android:textSize">18sp</item>
     </style>
 
     <style name="Theme.App.Base" parent="Widget.AppCompat.EditText">

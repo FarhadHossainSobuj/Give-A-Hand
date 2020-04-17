@@ -16,10 +16,20 @@
     <string name="mobile_no_hint">* আপনার মোবাইল নম্বর</string>
     <string name="another_no_hint">অন্য কোন যোগাযোগের মাধ্যম</string>
     <string name="btn_post_text">পোস্ট করুন</string>
-
+    <string name="post_again_text">পুনরায় পোস্ট করুন</string>
 
     <string name="address_error">আপনার ঠিকানা দিন</string>
     <string name="message_error">আপনার মেসেজ দিন</string>
     <string name="phone_error">আপনার মোবাইল নম্বর দিন</string>
+
+    <string name="bkash_numbers">বিকাশঃ ০১৬৮০২২০০০৯ (সীমান্ত)\n
+        ০১৬৮৬৬৪২১৮৯ (জীবন)\n
+        শাহ্জালাল ব্যাংক আসকোনা, আসকোনা\n
+        দক্ষিণখান, ঢাকা-১২৩০, বাংলাদেশ\n
+        ফোনঃ ০১৭৭৮২০২১০৩\n
+        info@giveahandbd.com\n
+        বিঃ দঃ ডোনেট করার পর আমাদের \n
+        সাথে যোগাযোগ করার জন্য অনুরোধ করা হইল
+    </string>
 
 </resources>

@@ -5,6 +5,7 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.appcompat.widget.AppCompatAutoCompleteTextView;
@@ -20,6 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.farhad.giveahand.DoHelpActivity;
@@ -45,8 +47,9 @@ public class DoHelpFragment extends Fragment {
     private AppCompatAutoCompleteTextView edtPrimaryTask;
     private List<String> mAreasList;
     private String date;
-    private TextView tv_date, tv_area;
+    private TextView tv_date, tv_area, tv_desc;
     private Button btn_details, btn_contact;
+    private ProgressBar mProgressBar;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -58,7 +61,10 @@ public class DoHelpFragment extends Fragment {
         btn_contact = view.findViewById(R.id.btn_contact);
         tv_area = view.findViewById(R.id.tv_location);
         tv_date = view.findViewById(R.id.tv_date);
+        tv_desc = view.findViewById(R.id.desc);
+        mProgressBar = view.findViewById(R.id.progressBar2);
 
+        mProgressBar.setVisibility(View.VISIBLE);
         getAreas();
 
         getDate();
@@ -68,16 +74,19 @@ public class DoHelpFragment extends Fragment {
         btn_contact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(), DoHelpActivity.class);
+                /*Intent intent = new Intent(getContext(), DoHelpActivity.class);
                 intent.putExtra("location", edtPrimaryTask.getText().toString());
                 intent.putExtra("date", tv_date.getText().toString());
+                startActivity(intent);*/
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", tv_desc.getText().toString(), null));
                 startActivity(intent);
             }
         });
         btn_details.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDialog();
+                Intent intent = new Intent(getContext(), DoHelpActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -128,6 +137,7 @@ public class DoHelpFragment extends Fragment {
                     edtPrimaryTask.setThreshold(1); //will start working from first character
                     edtPrimaryTask.setAdapter(adapter);
                     Log.d("TAG", "onResponse: " + mAreasList.size());
+                    mProgressBar.setVisibility(View.GONE);
                 }
             }
 

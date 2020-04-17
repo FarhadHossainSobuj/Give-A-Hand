@@ -15,7 +15,7 @@
         app:titleTextAppearance="@style/MineCustomToolbar"
         android:minHeight="?attr/actionBarSize"
         >
-        <TextView
+        <!--<TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Toolbar Title"
@@ -23,7 +23,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@color/colorTheme"
-            android:id="@+id/toolbar_title" />
+            android:id="@+id/toolbar_title" />-->
 
     </androidx.appcompat.widget.Toolbar>
     <com.google.android.material.tabs.TabLayout

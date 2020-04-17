@@ -29,6 +29,7 @@
                     android:drawablePadding="6dp"
                     android:textSize="18sp"
                     android:inputType="text"
+                    android:visibility="gone"
                     android:textColor="@color/textColorBlack"
                     android:drawableLeft="@drawable/search_icon"
                     />
@@ -78,7 +79,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textColor="@color/textColorBlack"
-                            android:text="I want to help..."
+                            android:text="01778202103"
                             />
                     </LinearLayout>
                     <LinearLayout
@@ -105,6 +106,14 @@
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminate="true"
+                android:visibility="gone"
+                />
         </LinearLayout>
     </ScrollView>
 </FrameLayout>

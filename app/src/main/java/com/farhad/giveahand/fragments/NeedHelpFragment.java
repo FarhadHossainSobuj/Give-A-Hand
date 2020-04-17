@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -36,10 +37,11 @@ public class NeedHelpFragment extends Fragment {
     private EditText edt_address, edt_message, edt_mobile, edt_mobile_other;
     private Button btn_post;
     private Spinner sp_main_address;
+    private ProgressBar mProgressBar;
 
-    private List<String> listAreas;
-    private List<Integer> mListAreaCode;
-    ArrayAdapter arrayAdapter;
+    private  List<String> listAreas;
+    private  List<Integer> mListAreaCode;
+    private  ArrayAdapter arrayAdapter;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -50,10 +52,12 @@ public class NeedHelpFragment extends Fragment {
         edt_mobile = view.findViewById(R.id.edt_mobile);
         edt_mobile_other = view.findViewById(R.id.edt_mobile_other);
         sp_main_address = view.findViewById(R.id.sp_main_address);
+        mProgressBar = view.findViewById(R.id.progressBar1);
 
         mListAreaCode = new ArrayList<>();
 
         listAreas = new ArrayList<>();
+        mProgressBar.setVisibility(View.VISIBLE);
         getAreas();
 
         arrayAdapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, listAreas);
@@ -94,6 +98,7 @@ public class NeedHelpFragment extends Fragment {
                         listAreas.add(area.getName());
                         mListAreaCode.add(area.getId());
                         arrayAdapter.notifyDataSetChanged();
+                        mProgressBar.setVisibility(View.GONE);
                     }
 
                 }
@@ -138,11 +143,9 @@ public class NeedHelpFragment extends Fragment {
 
             }
         });
-        builder.setNegativeButton("Cancel", null);
+//        builder.setNegativeButton("Cancel", null);
         AlertDialog dialog = builder.create();
         dialog.show();
-
-
 
     }
 

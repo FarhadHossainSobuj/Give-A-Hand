@@ -58,10 +58,10 @@ public class MainActivity extends AppCompatActivity {
     }
     private void setupToolbar() {
         toolbar =findViewById(R.id.tool_bar);
-        TextView mTitle = toolbar.findViewById(R.id.toolbar_title);
+//        TextView mTitle = toolbar.findViewById(R.id.too);
 
         setSupportActionBar(toolbar);
-        mTitle.setText(toolbar.getTitle());
+//        mTitle.setText(toolbar.getTitle());
         getSupportActionBar().setDisplayShowTitleEnabled(false);
     }
 }
